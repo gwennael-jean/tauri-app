@@ -4,23 +4,35 @@
     import LeftSidebar from "./components/LeftSidebar.svelte";
     import RightSidebar from "./components/RightSidebar.svelte";
     import BottomBar from "./components/BottomBar.svelte";
+
+    import bootstrap from "./services/Bootstrap";
 </script>
 
-<main class="text-white h-full flex flex-col bg-gray-100">
-    <RepositoryTab />
-    <ActionBar />
-    <div class="flex flex-row grow">
-        <LeftSidebar />
-        <div class="flex flex-col grow bg-primary p-1">
-            <h1>Hello !</h1>
-            <p>
-                Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-                to learn how to build Svelte apps.
-            </p>
+<main class="text-white h-full flex flex-col bg-primary">
+    {#await bootstrap.load()}
+        <p>
+            ...waiting
+        </p>
+    {:then value}
+        <RepositoryTab />
+        <ActionBar />
+        <div class="flex flex-row grow">
+            <LeftSidebar />
+            <div class="flex flex-col grow bg-primary p-1">
+                <h1>Hello !</h1>
+                <p>
+                    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
+                    to learn how to build Svelte apps.
+                </p>
+            </div>
+            <RightSidebar />
         </div>
-        <RightSidebar />
-    </div>
-    <BottomBar />
+        <BottomBar />
+    {:catch error}
+        <p style="color: red">
+            {error}
+        </p>
+    {/await}
 </main>
 
 <style lang="postcss" global>

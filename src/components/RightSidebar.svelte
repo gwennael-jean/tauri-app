@@ -1,8 +1,8 @@
 <script>
-    export let name;
+
 </script>
 
-<main>
+<main class="bg-secondary p-1">
     RightSidebar
 </main>
 

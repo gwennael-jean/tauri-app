@@ -1,39 +1,30 @@
 <script>
-    export let name;
-
     import RepositoryTab from "./components/RepositoryTab.svelte";
+    import ActionBar from "./components/ActionBar.svelte";
     import LeftSidebar from "./components/LeftSidebar.svelte";
     import RightSidebar from "./components/RightSidebar.svelte";
     import BottomBar from "./components/BottomBar.svelte";
 </script>
 
-<main>
+<main class="text-white h-full flex flex-col bg-gray-100">
     <RepositoryTab />
-    <LeftSidebar />
-    <h1>Hello {name}!</h1>
-    <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-    <RightSidebar />
+    <ActionBar />
+    <div class="flex flex-row grow">
+        <LeftSidebar />
+        <div class="flex flex-col grow bg-primary p-1">
+            <h1>Hello !</h1>
+            <p>
+                Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
+                to learn how to build Svelte apps.
+            </p>
+        </div>
+        <RightSidebar />
+    </div>
     <BottomBar />
 </main>
 
-<style>
-    main {
-        text-align: center;
-        padding: 1em;
-        max-width: 240px;
-        margin: 0 auto;
-    }
-
-    h1 {
-        color: #ff3e00;
-        text-transform: uppercase;
-        font-size: 4em;
-        font-weight: 100;
-    }
-
-    @media (min-width: 640px) {
-        main {
-            max-width: none;
-        }
-    }
+<style lang="postcss" global>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
 </style>

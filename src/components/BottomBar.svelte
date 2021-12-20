@@ -1,8 +1,8 @@
 <script>
-    export let name;
+
 </script>
 
-<main>
+<main class="flex flex-row justify-end bg-secondary p-1 border-t border-primary">
     BottomBar
 </main>
 

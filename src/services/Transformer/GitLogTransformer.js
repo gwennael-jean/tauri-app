@@ -1,5 +1,4 @@
 class GitLogTransformer {
-
     transform(value) {
         let commits = [];
 

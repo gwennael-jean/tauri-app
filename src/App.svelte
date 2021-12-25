@@ -4,6 +4,7 @@
     import LeftSidebar from "./components/LeftSidebar.svelte";
     import RightSidebar from "./components/RightSidebar.svelte";
     import BottomBar from "./components/BottomBar.svelte";
+    import Graph from "./components/Graph.svelte";
 
     import bootstrap from "./services/Bootstrap";
 </script>
@@ -19,11 +20,7 @@
         <div class="flex flex-row grow">
             <LeftSidebar />
             <div class="flex flex-col grow bg-primary p-1">
-                <h1>Hello !</h1>
-                <p>
-                    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-                    to learn how to build Svelte apps.
-                </p>
+                <Graph />
             </div>
             <RightSidebar />
         </div>

@@ -9,7 +9,7 @@
     import bootstrap from "./services/Bootstrap";
 </script>
 
-<main class="text-white h-full flex flex-col bg-primary">
+<main class="text-white flex flex-col bg-primary absolute inset-0">
     {#await bootstrap.load()}
         <p>
             ...waiting
@@ -17,9 +17,9 @@
     {:then value}
         <RepositoryTab />
         <ActionBar />
-        <div class="flex flex-row grow">
+        <div class="flex flex-row grow min-h-0">
             <LeftSidebar />
-            <div class="flex flex-col grow bg-primary p-1">
+            <div class="flex flex-col grow bg-primary p-1 overflow-auto min-h-0">
                 <Graph />
             </div>
             <RightSidebar />

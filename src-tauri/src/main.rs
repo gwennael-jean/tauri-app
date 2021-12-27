@@ -32,8 +32,8 @@ fn git_log(repository: String, skip: i32, count: i32) -> String {
     set_repository(&repository);
 
     let keys = vec![
-        "%H".to_string(),
-        "%P".to_string(),
+        "%h".to_string(),
+        "%p".to_string(),
         "%aN".to_string(),
         "%ae".to_string(),
         "%s".to_string(),

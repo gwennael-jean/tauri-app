@@ -51,9 +51,5 @@ fn git_log(repository: String, skip: i32, count: i32) -> String {
         .output()
         .expect("Failed to execute git");
 
-    let value = String::from_utf8_lossy(&output.stdout).to_string();
-
-    println!("{}", value);
-
-    return value;
+    return String::from_utf8_lossy(&output.stdout).to_string();
 }

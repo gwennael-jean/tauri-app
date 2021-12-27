@@ -6,8 +6,6 @@
     repository.subscribe(repository => {
         logs = repository.git.logs;
     });
-
-    console.log(logs);
 </script>
 
 <div>
@@ -20,7 +18,14 @@
             <tbody>
             {#each logs as log}
                 <tr>
-                    <td>{log.hash}</td>
+                    <td>
+                        {#each log.branches as ref}
+                            <a href="#" class="flex px-1 py-1 font-semibold select-none rounded-md text-white bg-indigo-500 hover:bg-indigo-600 whitespace-nowrap">
+                                {ref}
+                            </a>
+                        {/each}
+                    </td>
+                    <td></td>
                     <td>{log.subject}</td>
                     <td>{log.author_name}</td>
                 </tr>

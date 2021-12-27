@@ -22,6 +22,8 @@ class GitLogTransformer {
             subject: commitValues[4],
             date: commitValues[5],
             refs: commitValues[6],
+            branches: [],
+            tags: [],
             head: false,
         };
 
@@ -32,6 +34,8 @@ class GitLogTransformer {
 
         if (commit.refs.length) {
             commit.refs = commit.refs.split(', ');
+            commit.tags = commit.refs.filter(ref => ref.startsWith('tag:'));
+            commit.branches = commit.refs.filter(ref => !ref.startsWith('tag:'));
         }
 
         return commit;

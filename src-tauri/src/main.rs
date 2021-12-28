@@ -7,12 +7,6 @@ use std::env;
 use std::path::Path;
 use std::process::Command;
 
-#[derive(PartialEq, Default, Clone, Debug)]
-struct Commit {
-    hash: String,
-    message: String,
-}
-
 fn set_repository(repository: &String)
 {
     let root = Path::new(&repository);

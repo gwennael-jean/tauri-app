@@ -13,8 +13,8 @@ module.exports = {
         'amethyst': '#9b59b6',
         'nephritis': '#27ae60',
         'emerald': '#2ecc71',
-        'pomegranate': '#c0392b',
         'alizarin': '#e74c3c',
+        'pomegranate': '#c0392b',
       })
     },
   },
